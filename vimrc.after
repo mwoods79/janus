@@ -1,0 +1,28 @@
+let mapleader = ","  " My Leader key
+colorscheme solarized
+set cursorline
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
+" Visually select the text that was last edited/pasted
+nmap gV `[v`]
+
+set vb t_vb= " Turn off bell, this could be more annoying, but I'm not sure how
+
+:noremap <leader>i :set list!<CR> " Toggle invisible chars
+
+function! Preserve(command)
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  execute a:command
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction
+nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+nmap _= :call Preserve("normal gg=G")<CR>
+
+
