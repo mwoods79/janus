@@ -10,3 +10,6 @@
 [submodule "delimitMate"]
 	path = delimitMate
 	url = git://github.com/Raimondi/delimitMate.git
+[submodule "vim-repeat"]
+	path = vim-repeat
+	url = git://github.com/tpope/vim-repeat.git
