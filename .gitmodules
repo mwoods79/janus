@@ -7,3 +7,6 @@
 [submodule "vim-abolish"]
 	path = vim-abolish
 	url = git://github.com/tpope/vim-abolish.git
+[submodule "delimitMate"]
+	path = delimitMate
+	url = git://github.com/Raimondi/delimitMate.git
