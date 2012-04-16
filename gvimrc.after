@@ -3,20 +3,17 @@
 " |                              GUI stuff                                    |
 " -----------------------------------------------------------------------------
 
+if has("gui_running")
+  set t_Co=256
+  set guioptions-=m  "remove menu bar
+  set guioptions-=T  "remove toolbar
+endif
 
 " OS Specific *****************************************************************
 if has("gui_macvim")
-
   set fuoptions=maxvert,maxhorz " fullscreen options (MacVim only), resized window when changed to fullscreen
   set guifont=Menlo:h13
-  set guioptions-=T  " remove toolbar
-
-elseif has("gui_gtk2")
-
+else
   set guifont=Monospace
-  set guioptions-=T  " remove toolbar
-
-elseif has("x11")
-elseif has("gui_win32")
-end
+endif
 

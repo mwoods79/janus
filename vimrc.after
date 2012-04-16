@@ -1,10 +1,4 @@
-if has("gui_running")
-  set t_Co=256
-else
-  set t_Co=16
-endif
-
-
+set t_Co=16
 colorscheme solarized
 set background=dark
 set cursorline
@@ -33,3 +27,4 @@ nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap _= :call Preserve("normal gg=G")<CR>
 
 
+autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
